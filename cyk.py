@@ -39,9 +39,17 @@ for iteration_row in range(1, len(string)):
 
             for product in products:
                 # For each cartesian product
-                initial_symbols.append(find_original_state(product, example_cfg, processed_symbols))
+                initial_symbol = find_original_state(product, example_cfg, processed_symbols)
+                if initial_symbol:
+                    initial_symbols = initial_symbols + initial_symbol
+                    initial_symbols = list(set(initial_symbols))
             print(f"initial symbols: {initial_symbols}")
 
-        if substring not in processed_symbols:
+        if substring not in processed_symbols and initial_symbols:
             processed_symbols[substring] = initial_symbols
             print(f"processed dict updated: {processed_symbols}")
+
+if string in processed_symbols:
+    print(f"\n\nFINAL ANSWER: {processed_symbols[string]}")
+else:
+    print(f"\n\n{string} is not in the given CFG.")
