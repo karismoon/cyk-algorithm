@@ -44,7 +44,11 @@ def cartesian_product(symbols1, symbols2):
     products = []
     for symbol1 in symbols1:
         for symbol2 in symbols2:
-            product = symbol1 + symbol2
-            if product not in products:
-                products.append(product)
+            # print(f"symbol 1: {symbol1}")
+            # print(f"symbol 2: {symbol2}")
+            # product = "AB"
+            if isinstance(symbol1, str) and isinstance(symbol2, str):
+                product = symbol1 + symbol2
+                if product not in products:
+                    products.append(product)
     return products
