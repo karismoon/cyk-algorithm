@@ -50,6 +50,6 @@ for iteration_row in range(1, len(string)):
             print(f"processed dict updated: {processed_symbols}")
 
 if string in processed_symbols:
-    print(f"\n\nFINAL ANSWER: {processed_symbols[string]}")
+    print(f"\n\nFINAL ANSWER: {string} is in the given CFG, it can be obtained using these symbols: {processed_symbols[string]}")
 else:
     print(f"\n\n{string} is not in the given CFG.")
