@@ -1,16 +1,19 @@
-def find_original_state(cfg, symbol):
+def find_original_state(symbol, cfg, processed):
     """
     Find the state that gives the given symbol.
 
     Args:
-        cfg (dict): Representation of the CFG.
         symbol (string): Terminal or nonterminal state(s) to find the origin state of.
-
+        cfg (dict): Representation of the CFG.
+        processed (dict): Relationships not in the original CFG but have been found through processing.
+        
     Returns:
         A list of all the origin states.
     """
     if symbol in cfg:
         return cfg[symbol]
+    if symbol in processed:
+        return processed[symbol]
     return []
 
 def find_substrings(string):
