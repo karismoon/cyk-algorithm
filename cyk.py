@@ -7,7 +7,8 @@ from cyk_helpers import (
 from library import example_cfg
 string = "baaba"
 
-processed_symbols = {}
+cfg = example_cfg
+processed_symbols = cfg
 print(find_substrings("a"))
 
 for iteration_row in range(1, len(string)): 
@@ -28,8 +29,8 @@ for iteration_row in range(1, len(string)):
             # For each split of the substring
             print(f"split: {split}")
             # Find the production rule for each split of the string
-            rule1 = find_original_state(split[0], example_cfg, processed_symbols)
-            rule2 = find_original_state(split[1], example_cfg, processed_symbols)
+            rule1 = find_original_state(split[0], processed_symbols)
+            rule2 = find_original_state(split[1], processed_symbols)
             
             print(f"split first part origin: {rule1}")
             print(f"split second part origin: {rule2}")
@@ -39,7 +40,7 @@ for iteration_row in range(1, len(string)):
 
             for product in products:
                 # For each cartesian product
-                initial_symbol = find_original_state(product, example_cfg, processed_symbols)
+                initial_symbol = find_original_state(product, processed_symbols)
                 if initial_symbol:
                     initial_symbols = initial_symbols + initial_symbol
                     initial_symbols = list(set(initial_symbols))

@@ -1,17 +1,14 @@
-def find_original_state(symbol, cfg, processed):
+def find_original_state(symbol, processed):
     """
     Find the state that gives the given symbol.
 
     Args:
         symbol (string): Terminal or nonterminal state(s) to find the origin state of.
-        cfg (dict): Representation of the CFG.
-        processed (dict): Relationships not in the original CFG but have been found through processing.
+        processed (dict): Dynamic table with both relationships in the original CFG and those found through processing.
         
     Returns:
         A list of all the origin states.
     """
-    if symbol in cfg:
-        return cfg[symbol]
     if symbol in processed:
         return processed[symbol]
     return []
