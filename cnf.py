@@ -1,4 +1,4 @@
-from library import example_cfg
+from library import example_cfg, example_cfg_with_epsilon
 from cnf_helpers import eliminate_epsilon, eliminate_unit_productions, remove_mixed_productions, enforce_binary_productions
 
 """
@@ -31,7 +31,7 @@ def convert_to_cnf(cfg):
     
     return cfg
 
-print(example_cfg)
+print(example_cfg_with_epsilon)
 
-converted = convert_to_cnf(example_cfg)
+converted = convert_to_cnf(example_cfg_with_epsilon)
 print(converted)

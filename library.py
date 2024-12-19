@@ -8,3 +8,10 @@ example_cfg = {
     "BA": ["A"],
     "CC": ["B"],
 }
+
+example_cfg_with_epsilon = {
+    "S": ["AB", "AC", "ε"],
+    "A": ["a", "ε"],
+    "B": ["b", "C"],
+    "C": ["c", "ε"]
+}
