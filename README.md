@@ -135,7 +135,7 @@ Example:
    - Substring "ba" is split as ["b", "a"].
    - Identify origin non-terminals for "b" and "a" (e.g., B and A).
    - Compute the Cartesian product of [B] and [A] to get BA.
-   - Find non-terminals that produce BA and update `processed_symbols`.
+   - Find non-terminals that produce BA and update `processed_symbols` if necessary.
 
 2. Repeat for substrings of lengths 3, 4, and 5, following the same logic.
 ```
