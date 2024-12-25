@@ -20,7 +20,7 @@ For the CFG to be in CNF, all production rules must one of of the following form
 
 **1. Augment the Grammar**
 
-Add a new start symbol  and a rule , where  is the original start symbol. This ensures that the start symbol never appears on the right-hand side of any production.
+Add a new start symbol `S0` and a rule `AB`, where `S` is the original start symbol. This ensures that the start symbol never appears on the right-hand side of any production.
 
 Example:
 ```
@@ -34,7 +34,7 @@ After:
 
 **2. Eliminate Epsilon-Productions**
 
-Remove all productions of the form , except for the start symbol if necessary. Update other productions to account for nullable variables.
+Remove all productions of the form $ε$, except for the start symbol if necessary. Update other productions to account for nullable variables.
 
 Example:
 ```
@@ -49,7 +49,7 @@ After:
 
 **3. Eliminate Unit Productions**
 
-Remove unit productions of the form , where both  and  are non-terminals, and replace them with the productions of .
+Remove unit productions of the form $A$ -> $B$, where both $A$ and $B$ are non-terminals, and replace them with the productions of $A$ -> $a$ where $A$ is a non-terminal and $a$ is a terminal.
 
 Example:
 ```
@@ -63,7 +63,7 @@ After:
 
 **4. Remove Mixed Productions**
 
-Replace productions where terminals and non-terminals appear together (e.g., ) with new non-terminals for the terminals.
+Replace productions where terminals and non-terminals appear together (e.g., $Ab$) with new non-terminals for the terminals.
 
 Example:
 ```
